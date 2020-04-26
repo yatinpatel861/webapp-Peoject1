@@ -11,7 +11,47 @@
 {% endblock %}
 
 
-{% block body %}
+{% block Body %}
+<!-- CONTAINER -->
+<div class="container">
+    
+    <!-- CARD -->
+   <div class="card" style="margin-top: 10%">
+      <div class="card-body">
+        <center>
+            <h5 class="card-title">USER REGISTRATION</h5>
+        </center>
+          
+        <!-- FORM -->
+        <form>
+          <div class="form-group">
+            <label for="FirstName">Frist Name</label>
+            <input type="text" class="form-control" id="FirstName" placeholder="Enter your first name">
+          </div>
+            <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Enter your last name">
+            
+          </div>
+          <div class="form-group">
+            <label for="EmailID">Email address</label>
+            <input type="email" class="form-control" id="EmailID" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="Password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- END FORM -->
+          
+      </div>
+    </div>
+    <!-- END CARD -->
+    
+</div>
+<!-- END CONTAINER -->
 {% endblock %}
 
 
