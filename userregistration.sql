@@ -1,0 +1,7 @@
+CREATE TABLE Registration(
+    id SERIAL PRIMARY KEY,
+    First_Name VARCHAR NOT NULL,
+    Last_Name VARCHAR NOT NULL,
+    Email_ID VARCHAR NOT NULL,
+    PasWord VARCHAR NOT NULL
+);
