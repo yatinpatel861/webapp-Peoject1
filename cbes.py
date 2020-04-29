@@ -4,17 +4,20 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
+    app.debug = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    
+else:
     app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://tklkvrkxsgwyxr:ab086afcf8bb885d414f0d381eaba3254a21a6ecd9640636798c670a1881e0cd@ec2-54-217-204-34.eu-west-1.compute.amazonaws.com:5432/dbk8u87rgr937q'
     
-else:
-    app.debug = True
-    
 
-app.config['SQLALCHEMY_TRACK_ODIFICATION'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
 
 @app.route("/")
 def registration():
