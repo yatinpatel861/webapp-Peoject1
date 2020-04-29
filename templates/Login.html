@@ -1,0 +1,51 @@
+{% extends "Layout.html" %}
+
+{% block title %}
+       LOGIN
+{% endblock %}
+
+
+{% block stylesheet %}
+
+
+{% endblock %}
+
+
+{% block Body %}
+<!-- CONTAINER -->
+<div class="container">
+    
+    <!-- CARD -->
+   <div class="card" style="margin-top: 20%">
+      <div class="card-body">
+        <center>
+            <h5 class="card-title">LOGIN</h5>
+        </center>
+          
+        <!-- FORM -->
+        <form>
+          <div class="form-group">
+            <label for="EmailID">Email address</label>
+            <input type="email" class="form-control" name="EmailID" id="EmailID" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- END FORM -->
+          
+      </div>
+    </div>
+    <!-- END CARD -->
+    
+</div>
+<!-- END CONTAINER -->
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}
