@@ -1,14 +1,15 @@
+
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:2648@localhost:5432/cbes"
     
 else:
     app.debug = False
@@ -17,7 +18,27 @@ else:
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
 db = SQLAlchemy(app)
+
+
+class Registarion(db.Model):
+    __tablename__ = 'registartion'
+    id =db.Column(db.Integer, primary_key=True)
+    First_Name =db.Column(db.String(100))
+    Last_Name =db.Column(db.String(100))
+    Email_ID =db.Column(db.String(300))
+    Password =db.Column(db.String(200))
+    
+    
+    
+    def __init__(self, First_Name, Last_Name, Email_ID, Password):
+        self.First_Name = First_Name
+        self.Last_Name = Last_Name
+        self.Email_ID = Email_ID
+        self.Password = Password
+    
+            
 
 @app.route("/")
 def registration():
