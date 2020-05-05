@@ -4,13 +4,20 @@
         <title>{% block title %}{% endblock %}</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/Main.css" media="screen">
         <script src="https://kit.fontawesome.com/e762fcc3e1.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/static/css/bootstrap.min.css" media="screen">
         
+        
         {% block stylesheet %}
+        <style>
+            body {
+              background-image: url("../background-blur-clean-clear-531880.jpg");
+            }
+        </style>
         {% endblock %}
     </head>
-    <body style="background-color:gainsboro;">
+    <body>
         {% block Body%}
         {% endblock %}
     </body>
